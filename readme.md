@@ -1,6 +1,6 @@
 # 编译原理 词法分析器文档
 
-### 20192131031 梁诺明
+### **20192131031 梁诺明**
 
 ## 需求：
 
@@ -21,21 +21,21 @@
 
 ## DFA图示例：
 
-![image-20211004165146323](/Users/liangnuoming/Library/Application Support/typora-user-images/image-20211004165146323.png)
+![image-20211004165146323](https://gitee.com/lnm011223/lnm011223-picture/raw/master/uPic/image-20211004165146323.png)
 
 <!--标识符/关键字-->
 
-![image-20211004165741462](/Users/liangnuoming/Library/Application Support/typora-user-images/image-20211004165741462.png)
+![image-20211004165741462](https://gitee.com/lnm011223/lnm011223-picture/raw/master/uPic/image-20211004165741462.png)
 
 <!--数字-->
 
-![image-20211004170338984](/Users/liangnuoming/Library/Application Support/typora-user-images/image-20211004170338984.png)
+![image-20211004170338984](https://gitee.com/lnm011223/lnm011223-picture/raw/master/uPic/image-20211004170338984.png)
 
-![image-20211004170429845](/Users/liangnuoming/Library/Application Support/typora-user-images/image-20211004170429845.png)
+![image-20211004170429845](https://gitee.com/lnm011223/lnm011223-picture/raw/master/uPic/image-20211004170429845.png)
 
-![image-20211004170601626](/Users/liangnuoming/Library/Application Support/typora-user-images/image-20211004170601626.png)
+![image-20211004170601626](https://gitee.com/lnm011223/lnm011223-picture/raw/master/uPic/image-20211004170601626.png)
 
-![image-20211004171056774](/Users/liangnuoming/Library/Application Support/typora-user-images/image-20211004171056774.png)
+![image-20211004171056774](https://gitee.com/lnm011223/lnm011223-picture/raw/master/uPic/image-20211004171056774.png)
 
 ## 重要函数实现：（scanner.h)
 
@@ -74,15 +74,15 @@ bool digit(char C);
 
 ## 软件界面展示：
 
-![image-20211004171610796](/Users/liangnuoming/Library/Application Support/typora-user-images/image-20211004171610796.png)
+![image-20211004171610796](https://gitee.com/lnm011223/lnm011223-picture/raw/master/uPic/image-20211004171610796.png)
 
 ## 测试结果：
 
-![image-20211004171726737](/Users/liangnuoming/Library/Application Support/typora-user-images/image-20211004171726737.png)
+![image-20211004171726737](https://gitee.com/lnm011223/lnm011223-picture/raw/master/uPic/image-20211004171726737.png)
 
-![image-20211004171800343](/Users/liangnuoming/Library/Application Support/typora-user-images/image-20211004171800343.png)
+![image-20211004171800343](https://gitee.com/lnm011223/lnm011223-picture/raw/master/uPic/image-20211004171800343.png)
 
-![image-20211004171904459](/Users/liangnuoming/Library/Application Support/typora-user-images/image-20211004171904459.png)
+![image-20211004171904459](https://gitee.com/lnm011223/lnm011223-picture/raw/master/uPic/image-20211004171904459.png)
 
 ## 总结：
 
