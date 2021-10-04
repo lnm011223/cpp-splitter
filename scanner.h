@@ -10,18 +10,14 @@
 #include <cstdlib>
 using namespace std;
 
-int start = 0, over = 0, first = 0;//指针
-int letters = 0, lines = 0, words = 0;//统计单词数，行数和字符数的变量
-int state;//状态变量
-
-class str//单词类
+class str
 {
 public:
     int linenum;//行号
     string Str;//单词
 };
 
-//输出文件名
+//输出文件名(为原文件名+_out.txt）
 string file_name;
 
 //返回单词或符号,从位置i开始查找，引用参数j返回这个单词最后一个字符在str的位置。
@@ -30,24 +26,27 @@ string GetWord(string str, int i, int& j);
 //除去字符串中连续的空格和换行。第一个参数为目标字符串，第二个参数为开始位置。返回值为第一个有效字符在字符串的位置
 int get_nbc(string str, int i);
 
-//文件输出函数，成功输出返回true，失败返回false
+//文件输出函数，成功输出后才能被读取出来
 bool Output(vector<pair<string, string> > v);
 
 //词法分析主要算法函数，返回一个pair型数组
 vector<pair<string, string> > analyse(vector<str>& vec);
 
-//此函数判断str是否为关键字，是的话，返回真，反之返回假
+//关键字判断
 bool IsKey(string str);
 
-//此函数判断C是否为字母，是的话，返回真，反之返回假
+//字母判断
 bool letter(char C);
 
-//此函数判断C是否为数字，是的话，返回真，反之返回假
+//数字判断
 bool digit(char C);
 
 
 
 
+int start = 0, over = 0, first = 0;//指针
+int letters = 0, lines = 0, words = 0;//统计单词数，行数和字符数的变量
+int state;//状态变量
 
 
 
@@ -79,25 +78,7 @@ bool IsKey(string str)
     return false;
 }
 
-string GetWord(string str,int i,int& j)
-{
-    string symbol("\\%#:,^~{}[]() \'\";\n\t?");
-    j=str.find_first_of(symbol,i);
-    if(j==-1)
-       return " ";
-    if(i!=j)
-       j--;
-    return str.substr(i,j-i+1);
-}
 
-int get_nbc(string str,int i)
-{
-    for(;;i++)
-      if(str[i]!=' '&&str[i]!='\n' && str[i] != '\t')
-      {
-         return i;
-      }
-}
 
 bool Output(vector<pair<string,string> > v)
 {
@@ -110,10 +91,10 @@ bool Output(vector<pair<string,string> > v)
     }
     cout<<endl;
     int i, j;
-    outfile << "类型" << "\t\t\t" << "表达式" << endl;
+    outfile << "表达式" << "\t\t\t" << "类型" << endl;
     for(i=0;i<v.size();i++)
     {
-        outfile << v[i].first << "\t\t\t" << v[i].second << endl;
+        outfile << v[i].second << "\t\t\t" << v[i].first << endl;
         letters += v[i].second.size();
     }
     vector<bool> key;
@@ -121,7 +102,8 @@ bool Output(vector<pair<string,string> > v)
     {
         key.push_back(false);
     }
-    outfile <<"---------------------------------------------------------------------" << endl;
+    outfile <<endl;
+    outfile <<"*******************以下是统计部分*******************" << endl;
     outfile << "表达式" << "\t\t\t" << "个数" << endl;
     for (i = 0;i < v.size();i++)
     {
@@ -163,11 +145,32 @@ bool Output(vector<pair<string,string> > v)
         }
     }
     outfile << "---------------------------------------------------------------------" << endl;
-    outfile << "源程序共有" << lines << "行。" << endl;
-    outfile << "源程序共有" << words << "个单词。" << endl;
-    outfile << "源程序共有" << letters << "个字符。" << endl;
+    outfile << "源文件共有" << lines << "行。" << endl;
+    outfile << "源文件共有" << words << "个单词。" << endl;
+    outfile << "源文件共有" << letters << "个字符。" << endl;
     outfile.close();
     return true;
+}
+
+
+string GetWord(string str,int i,int& j)
+{
+    string symbol("\\%#:,^~{}[]() \'\";\n\t?");
+    j=str.find_first_of(symbol,i);
+    if(j==-1)
+       return " ";
+    if(i!=j)
+       j--;
+    return str.substr(i,j-i+1);
+}
+
+int get_nbc(string str,int i)
+{
+    for(;;i++)
+      if(str[i]!=' '&&str[i]!='\n' && str[i] != '\t')
+      {
+         return i;
+      }
 }
 
 vector<pair<string,string> > analyse(vector<str>& vec)
@@ -873,59 +876,6 @@ vector<pair<string,string> > analyse(vector<str>& vec)
     }
    return temp;
 }
-/*
-int main()
-{
-    string com1 = " ";
-    string com2 = "\n";
-    string fileline;
-    int i = 1;
-    vector<str>array(0);
-    string file_name1;
-    cout<<"请输入源文件路径（包括后缀名）：";
-    cin>>file_name1;
-    ifstream infile(file_name1.c_str(), ios::in);
-    if (!infile)
-    {
-        cerr << "无法打开源文件 " << file_name1.c_str() << endl;
-    }
-    else
-    {
-        cout << endl;
-        while (!infile.eof())
-        {
-            getline(infile, fileline, '\n');
-            fileline += "\n";
-            lines++;
-            str nowString;
-            start = 0;
-            over = 0;
-            for (int j = 0;fileline[j] != '\0' && over != -1;j++)
-            {
-                start = get_nbc(fileline, start);
-                nowString.Str = GetWord(fileline, start, over);
-                nowString.linenum = lines;
-                if (nowString.Str.compare(com1) && nowString.Str.compare(com2))
-                {
-                    array.push_back(nowString);
-                }
-                start = over + 1;
-            }
-        }
-        vector<pair<string, string> > result;
-        result = analyse(array);
-        bool out_flag = Output(result);
-        if (out_flag)
-        {
-            cout << "----------------------------------------------------------------------\n";
-            cout << "词法分析完成，分析结果已经存储在文件" << file_name << "中\n";
-            cout << "----------------------------------------------------------------------\n";
-        }
-    }
-    system("pause");
-    return 0;
-}
-*/
 
 
 #endif // SCANNER_H
