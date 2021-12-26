@@ -6,278 +6,88 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1513</width>
-    <height>930</height>
+    <width>798</width>
+    <height>577</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>TINY 扩充语言的语法分析</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QTabWidget" name="tabWidget">
+   <widget class="QGroupBox" name="groupBox">
     <property name="geometry">
      <rect>
-      <x>0</x>
+      <x>10</x>
       <y>10</y>
-      <width>1511</width>
-      <height>901</height>
+      <width>388</width>
+      <height>541</height>
      </rect>
     </property>
-    <property name="font">
-     <font>
-      <pointsize>14</pointsize>
-     </font>
+    <property name="title">
+     <string>TINY源码：</string>
     </property>
-    <property name="tabPosition">
-     <enum>QTabWidget::South</enum>
-    </property>
-    <property name="tabShape">
-     <enum>QTabWidget::Triangular</enum>
-    </property>
-    <property name="currentIndex">
-     <number>0</number>
-    </property>
-    <widget class="QWidget" name="widget">
-     <attribute name="title">
-      <string>读取处理</string>
-     </attribute>
-     <widget class="QTextEdit" name="textEdit">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>130</y>
-        <width>361</width>
-        <height>221</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QTextBrowser" name="textBrowser">
-      <property name="geometry">
-       <rect>
-        <x>390</x>
-        <y>130</y>
-        <width>701</width>
-        <height>701</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label">
-      <property name="geometry">
-       <rect>
-        <x>130</x>
-        <y>90</y>
-        <width>211</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>读取的文法</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_2">
-      <property name="geometry">
-       <rect>
-        <x>1200</x>
-        <y>90</y>
-        <width>271</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>处理后的文法</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_3">
-      <property name="geometry">
-       <rect>
-        <x>705</x>
-        <y>90</y>
-        <width>161</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>处理过程</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_4">
-      <property name="geometry">
-       <rect>
-        <x>130</x>
-        <y>360</y>
-        <width>181</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>FIRST集合</string>
-      </property>
-     </widget>
-     <widget class="QTextBrowser" name="textBrowser_6">
-      <property name="geometry">
-       <rect>
-        <x>1110</x>
-        <y>130</y>
-        <width>361</width>
-        <height>221</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_10">
-      <property name="geometry">
-       <rect>
-        <x>1210</x>
-        <y>360</y>
-        <width>181</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>FOLLOW集合</string>
-      </property>
-     </widget>
-     <widget class="QTextBrowser" name="textBrowser_2">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>400</y>
-        <width>361</width>
-        <height>431</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QTextBrowser" name="textBrowser_4">
-      <property name="geometry">
-       <rect>
-        <x>1110</x>
-        <y>400</y>
-        <width>361</width>
-        <height>431</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="lineEdit">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>20</y>
-        <width>1121</width>
-        <height>51</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton">
-      <property name="geometry">
-       <rect>
-        <x>1150</x>
-        <y>20</y>
-        <width>101</width>
-        <height>51</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>14</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string>打开</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton_2">
-      <property name="geometry">
-       <rect>
-        <x>1270</x>
-        <y>20</y>
-        <width>101</width>
-        <height>51</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>14</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string>处理</string>
-      </property>
-     </widget>
-    </widget>
-    <widget class="QWidget" name="tab_2">
-     <attribute name="title">
-      <string>输入分析</string>
-     </attribute>
-     <widget class="QLineEdit" name="lineEdit_2">
-      <property name="geometry">
-       <rect>
-        <x>140</x>
-        <y>30</y>
-        <width>1221</width>
-        <height>51</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton_4">
-      <property name="geometry">
-       <rect>
-        <x>1380</x>
-        <y>30</y>
-        <width>101</width>
-        <height>51</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>14</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string>分析</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_5">
-      <property name="geometry">
-       <rect>
-        <x>12</x>
-        <y>35</y>
-        <width>141</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>输入要分析的句子</string>
-      </property>
-     </widget>
-     <widget class="QTextBrowser" name="textBrowser_3">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>150</y>
-        <width>1471</width>
-        <height>681</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_7">
-      <property name="geometry">
-       <rect>
-        <x>20</x>
-        <y>90</y>
-        <width>271</width>
-        <height>51</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>最左推导过程</string>
-      </property>
-     </widget>
-     <zorder>pushButton_4</zorder>
-     <zorder>lineEdit_2</zorder>
-     <zorder>label_5</zorder>
-     <zorder>textBrowser_3</zorder>
-     <zorder>label_7</zorder>
-    </widget>
+    <layout class="QGridLayout" name="gridLayout_2">
+     <item row="1" column="0">
+      <widget class="QPushButton" name="openFileBtn">
+       <property name="text">
+        <string>导入文件</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="0">
+      <widget class="QTextEdit" name="codeText"/>
+     </item>
+     <item row="2" column="0">
+      <widget class="QPushButton" name="saveCodeBtn">
+       <property name="text">
+        <string>保存TINY源码</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </widget>
+   <widget class="QGroupBox" name="groupBox_2">
+    <property name="geometry">
+     <rect>
+      <x>400</x>
+      <y>10</y>
+      <width>388</width>
+      <height>541</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>TINY语法树：</string>
+    </property>
+    <layout class="QGridLayout" name="gridLayout_3">
+     <item row="1" column="0">
+      <widget class="QPushButton" name="getSyntaxTreeBtn">
+       <property name="text">
+        <string>生成语法树</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="0">
+      <widget class="QTextBrowser" name="syntaxTreeText"/>
+     </item>
+     <item row="2" column="0">
+      <widget class="QPushButton" name="saveSyntaxTreeBtn">
+       <property name="text">
+        <string>保存语法树</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>798</width>
+     <height>22</height>
+    </rect>
+   </property>
   </widget>
  </widget>
  <resources/>

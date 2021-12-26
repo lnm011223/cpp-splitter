@@ -2,8 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include<QTextBrowser>
-#include"Processor.h"
+
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
@@ -17,23 +16,15 @@ public:
     ~MainWindow();
 
 private slots:
+    void on_openFileBtn_clicked();
 
-    void on_pushButton_clicked();
+    void on_getSyntaxTreeBtn_clicked();
 
-    void on_pushButton_2_clicked();
+    void on_saveCodeBtn_clicked();
 
-    void on_pushButton_4_clicked();
-
-    void on_pushButton_3_clicked();
+    void on_saveSyntaxTreeBtn_clicked();
 
 private:
     Ui::MainWindow *ui;
-    QString filePath;
-    Processor *processor = NULL;
-    //获取指定输出
-    string getProcessedGrammers();
-    void outputFirst();
-    void outputFollow();
-    void outputLog();
 };
 #endif // MAINWINDOW_H
